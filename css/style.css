@@ -937,3 +937,116 @@ button {
 .margin_top90 {
     margin-top: 90px;
 }
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
+
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 9999;
+}
+.anim-left{
+   animation: float-text-left 1s ease-in;
+}
+.anim-right{
+   animation: float-text-right 1s ease-in;
+}
+.anim-top{
+   animation: float-text-top 1s ease-in;
+}
+.anim-bottom{
+   animation: float-text-bottom 1s ease-in;
+}
+.loading-text {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+}
+.loading-text span {
+		display: inline-block;
+		margin: 0 5px;
+		color: #fff;
+    font-family: 'Quattrocento Sans', sans-serif;
+		@for $i from 0 through 15{
+			&:nth-child(#{$i + 1}) {
+				filter: blur(0px);
+        transform:rotate(0deg);
+				animation:blur-text 1s (#{$i/15})+s cubic-bezier(0.4, 0.1, 0.6, 1) alternate;
+			}
+		}
+	}
+
+@keyframes blur-text {
+	0% {
+    transform:rotate(90deg);
+  }
+	100% {
+    transform:rotate(0deg);
+  }
+}
+@keyframes float-text-left {
+	0% {
+    left:-90%;
+    font-size:4vw;
+    // filter:blur(100px);
+  }
+	100% {
+    left:0%;
+    font-size:16px;
+   // filter:blur(0px);
+  }
+}
+@keyframes float-text-right {
+	0% {
+    right:-90%;
+    font-size:4vw;
+    // filter:blur(100px);
+  }
+	100% {
+    left:0%;
+    font-size:16px;
+   // filter:blur(0px);
+  }
+}
+@keyframes float-text-top {
+	0% {
+    top:-90%;
+    font-size:4vw;
+    // filter:blur(100px);
+  }
+	100% {
+    top:0%;
+    font-size:16px;
+   // filter:blur(0px);
+  }
+}
+@keyframes float-text-bottom {
+	0% {
+    bottom:-90%;
+    font-size:4vw;
+    // filter:blur(100px);
+  }
+	100% {
+    bottom:0%;
+    font-size:16px;
+   // filter:blur(0px);
+  }
+}
